@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    RED.nodes.registerType('IBMIoTI', {
+        category: 'IBM Watson',
+        color: '#FFF0F0',
+        defaults: {
+            userid: {required: true},
+            password: {required: true},
+            uri: {required: true},
+            name: {value: "IBM IoTI"},
+        },
+        inputs: 1,
+        outputs: 1,
+        align: 'right',
+        icon: "shield.png",
+        label: function() {
+            return this.name || "IBM IoTI";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="IBMIoTI">
+    <div class="form-row">
+        <label for="node-input-userid"><i class="icon-tag"></i> userid</label>
+        <input type="text" id="node-input-userid" placeholder="userid">
+    </div>
+  <div class="form-row">
+        <label for="node-input-password"><i class="icon-tag"></i> password</label>
+        <input type="text" id="node-input-password" placeholder="password">
+    </div>
+     <div class="form-row">
+        <label for="node-input-uri"><i class="icon-tag"></i> uri</label>
+        <input type="text" id="node-input-uri" placeholder="uri">
+    </div>
+     <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="IBMIoTI">
+
+
+</script>
