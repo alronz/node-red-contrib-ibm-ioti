@@ -41,10 +41,10 @@
                     if (!currvalue) {
                         $("#node-input-apisUser option[value='createUser']").prop('selected', true);
                     }
-                    $('#node-input-apisUser').show();
+                    $('#apisUser').show();
                 }
                 else {
-                    $('#node-input-apisUser').hide();
+                    $('#apisUser').hide();
                 }
 
                 if (selectedClient.val() == 'IotIDevice') {
@@ -52,10 +52,10 @@
                     if (!currvalue) {
                         $("#node-input-apisDevice option[value='createDevice']").prop('selected', true);
                     }
-                    $('#node-input-apisDevice').show();
+                    $('#apisDevice').show();
                 }
                 else {
-                    $('#node-input-apisDevice').hide();
+                    $('#apisDevice').hide();
                 }
 
                 if (selectedClient.val() == 'IotIGlobal') {
@@ -63,10 +63,10 @@
                     if (!currvalue) {
                         $("#node-input-apisGlobal option[value='sendPayloadToMQTT']").prop('selected', true);
                     }
-                    $('#node-input-apisGlobal').show();
+                    $('#apisGlobal').show();
                 }
                 else {
-                    $('#node-input-apisGlobal').hide();
+                    $('#apisGlobal').hide();
                 }
 
 
@@ -75,10 +75,10 @@
                     if (!currvalue) {
                         $("#node-input-apisHazardEvent option[value='createHEvent']").prop('selected', true);
                     }
-                    $('#node-input-apisHazardEvent').show();
+                    $('#apisHazardEvent').show();
                 }
                 else {
-                    $('#node-input-apisHazardEvent').hide();
+                    $('#apisHazardEvent').hide();
                 }
 
 
@@ -87,10 +87,10 @@
                     if (!currvalue) {
                         $("#node-input-apisJSCode option[value='createJSCode']").prop('selected', true);
                     }
-                    $('#node-input-apisJSCode').show();
+                    $('#apisJSCode').show();
                 }
                 else {
-                    $('#node-input-apisJSCode').hide();
+                    $('#apisJSCode').hide();
                 }
 
                 if (selectedClient.val() == 'IotIPromotion') {
@@ -98,10 +98,10 @@
                     if (!currvalue) {
                         $("#node-input-apisPromotion option[value='createPromotion']").prop('selected', true);
                     }
-                    $('#node-input-apisPromotion').show();
+                    $('#apisPromotion').show();
                 }
                 else {
-                    $('#node-input-apisPromotion').hide();
+                    $('#apisPromotion').hide();
                 }
 
                 if (selectedClient.val() == 'IotIRegistration') {
@@ -109,10 +109,10 @@
                     if (!currvalue) {
                         $("#node-input-apisRegistration option[value='createRegistrationDevice']").prop('selected', true);
                     }
-                    $('#node-input-apisRegistration').show();
+                    $('#apisRegistration').show();
                 }
                 else {
-                    $('#node-input-apisRegistration').hide();
+                    $('#apisRegistration').hide();
                 }
 
                 if (selectedClient.val() == 'IotIShieldAssociation') {
@@ -120,10 +120,10 @@
                     if (!currvalue) {
                         $("#node-input-apisShieldAssociation option[value='createShieldAssociation']").prop('selected', true);
                     }
-                    $('#node-input-apisShieldAssociation').show();
+                    $('#apisShieldAssociation').show();
                 }
                 else {
-                    $('#node-input-apisShieldAssociation').hide();
+                    $('#apisShieldAssociation').hide();
                 }
 
                 if (selectedClient.val() == 'IotIShield') {
@@ -131,10 +131,10 @@
                     if (!currvalue) {
                         $("#node-input-apisShield option[value='createShield']").prop('selected', true);
                     }
-                    $('#node-input-apisShield').show();
+                    $('#apisShield').show();
                 }
                 else {
-                    $('#node-input-apisShield').hide();
+                    $('#apisShield').hide();
                 }
 
             });
@@ -224,9 +224,7 @@
             <option value="getJSCodesPerShieldUUUID">Get JSCodes Per Shield UUID</option>
             <option value="getCommonJSCodes">Get Common JSCodes</option>
             <option value="getAllJSCodes">Get All JSCodes</option>
-            <option value="deleteHEventsPerUser">Delete HEvents Per User</option>
             <option value="getJSCodesPerUser">Get JSCodes Per User</option>
-            <option value="setHEventAttribute">Set HEvent Attribute</option>
             <option value="updateJSCode">Update JSCode</option>
         </select>
     </div>
@@ -239,7 +237,6 @@
             <option value="deletePromotionPerId">Delete Promotion Per Id</option>
             <option value="deletePromotionAttribute">Delete Promotion Attribute</option>
             <option value="setPromotionAttribute">Set Promotion Attribute</option>
-            <option value="deleteHEventsPerUser">Delete HEvents Per User</option>
             <option value="getAllPromotions">Get All Promotions</option>
         </select>
     </div>
@@ -310,6 +307,222 @@
 </script>
 
 <script type="text/x-red" data-help-name="IBMIoTI">
+
+
+<h3>Overview</h3>
+
+<p>This goal of this node is to invoke all APIs provided by IBM service IoT for insurance   <a href="https://console.ng.bluemix.net/docs/services/IotInsurance/index.html</a>. </p>
+
+
+<h3>Supported APIs</h3>
+  
+  <p>The APIs are divided to the below groups:</p>
+
+<ul>
+<li>Device Apis</li>
+
+<li>Global Apis</li>
+
+<li>HazardEvent Apis</li>
+
+<li>JSCode Apis</li>
+
+<li>Promotion Apis</li>
+
+<li>Registration Apis</li>
+
+<li>ShieldAssociation Apis</li>
+
+<li>Shield Apis</li>
+
+<li>User Apis</li>
+</ul>
+
+<h3 id="howtouseit">How to use it</h3>
+
+<p>Each API call needs some parameters and they should be provided inside the <b>msg.payload</b> object. For example, for calling createUser(user) API, you need to provide the user as <b>msg.payload.user</b>.</p>
+
+  <p> Below are the list of all the supported APIs with their required paramters:</p>
+
+<h3 id="iotidevice">Device Apis</h3>
+
+<ul>
+<li>createDevice(device)</li>
+
+<li>getDevicesPerId(deviceId)</li>
+
+<li>getDevicesForAuthUser()</li>
+
+<li>deleteDevicePerId(deviceId)</li>
+
+<li>deleteDeviceAttribute(deviceId, attributeName)</li>
+
+<li>setDeviceAttribute(deviceId, attributeName, attributeValue)</li>
+
+<li>getAllDevices()</li>
+
+<li>getDevicesPerUser(username)</li>
+
+<li>updateDevice(deviceId, newDevice)</li>
+</ul>
+
+<h3 id="iotiglobal">Global Apis</h3>
+
+<ul>
+<li>sendPayloadToMQTT(outputType, deviceType, deviceId, type, payload)</li>
+
+<li>sendPushNotification(pushNotification)</li>
+</ul>
+
+<h3 id="iotihazardevent">HazardEvent Apis</h3>
+
+<ul>
+<li>createHEvent(hazardEvent)</li>
+
+<li>getHEventPerHEventId(hazardEventId)</li>
+
+<li>getHEventPerId(id)</li>
+
+<li>getHEventsForAuthUser(callback)</li>
+
+<li>deleteHEventPerId(hazardEventId)</li>
+
+<li>deleteHEventsPerUser(username)</li>
+
+<li>deleteHEventAttribute(hazardEventId, attributeName)</li>
+
+<li>setHEventAttribute(hazardEventId, attributeName, attributeValue)</li>
+
+<li>getAllHEvents(callback)</li>
+
+<li>getHEventsAggregated(queryParams)</li>
+
+<li>updateHEventValidationType(hazardEventId, validationType)</li>
+</ul>
+
+<h3 id="iotijscode">JSCode Apis</h3>
+
+<ul>
+<li>createJSCode(jsCode)</li>
+
+<li>updateAll(callback)</li>
+
+<li>getJSCodesPerShieldUUUID(shieldUUUID, queryParams)</li>
+
+<li>getCommonJSCodes(queryParams)</li>
+
+<li>getAllJSCodes(queryParams)</li>
+
+<li>getJSCodesPerUser(username, queryParams)</li>
+
+<li>updateJSCode(jsCodeId, code)</li>
+</ul>
+
+<h3 id="iotipromotion">Promotion Apis</h3>
+
+<ul>
+<li>createPromotion(promotion)</li>
+
+<li>getPromotionsPerId(promotionId)</li>
+
+<li>deletePromotionPerId(promotionId)</li>
+
+<li>deletePromotionAttribute(promotionId, attributeName)</li>
+
+<li>setPromotionAttribute(promotionId, attributeName, attributeValue)</li>
+
+<li>getAllPromotions(callback)</li>
+</ul>
+
+<h3 id="iotiregistration">Registration Apis</h3>
+
+<ul>
+<li>createRegistrationDevice(device)</li>
+
+<li>getRegistrationDevicePerId(deviceId)</li>
+
+<li>getRegistrationsPerUser(username)</li>
+
+<li>getRegistrationsPerProvider(provider)</li>
+
+<li>deleteRegistrationPerDeviceId(deviceId)</li>
+
+<li>updateRegistrationDevice(deviceId, newDevice)</li>
+</ul>
+
+<h3 id="iotishieldassociation">ShieldAssociation Apis</h3>
+
+<ul>
+<li>createShieldAssociation(shieldAssociation)</li>
+
+<li>getShieldAssociationsPerId(shieldAssociationId)</li>
+
+<li>getShieldAssociationsForAuthUser(callback)</li>
+
+<li>deleteShieldAssociationPerId(shieldAssociationId)</li>
+
+<li>deleteAllShieldAssociations(callback)</li>
+
+<li>deleteShieldAssociationAttribute(shieldAssociationId, attributeName)</li>
+
+<li>setShieldAssociationAttribute(shieldAssociationId, attributeName, attributeValue)</li>
+
+<li>getAllShieldAssociations(callback)</li>
+
+<li>getShieldAssociationsPerUser(username)</li>
+
+<li>setShieldAssociationOnCloud(shieldAssociation)</li>
+</ul>
+
+<h3 id="iotishield">Shield Apis</h3>
+
+<ul>
+<li>createShield(shield)</li>
+
+<li>getShieldsPerId(shieldId)</li>
+
+<li>getShieldsPerUser(username)</li>
+
+<li>getShieldsPerUUID(uuid)</li>
+
+<li>deleteShieldPerId(shieldId)</li>
+
+<li>deleteAllShields(callback)</li>
+
+<li>deleteShieldAttribute(shieldId, attributeName)</li>
+
+<li>setShieldAttribute(shieldId, attributeName, attributeValue)</li>
+
+<li>getAllShields(callback)</li>
+</ul>
+
+<h3 id="iotiuser">User Apis</h3>
+
+<ul>
+<li>createUser(user)</li>
+
+<li>getAuthUser(callback)</li>
+
+<li>checkUserLogin(callback)</li>
+
+<li>checkUserLogout(callback)</li>
+
+<li>deleteUserPerUserName(username)</li>
+
+<li>deleteUserAttribute(userName, attributeName)</li>
+
+<li>setUserAttribute(userName, attributeName, attributeValue)</li>
+
+<li>setUserAccessLevel(userName, accessLevel)</li>
+
+<li>getAllUsers(callback)</li>
+
+<li>getUserPerUserName(userName)</li>
+
+<li>getUserSensors(callback)</li>
+
+<li>updateUserDevice(userName, deviceId)</li>
+</ul>
 
 
 </script>

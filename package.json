@@ -39,6 +39,6 @@
     }
   },
   "dependencies": {
-    "ioti-nodejs-sdk": "git+https://github.com/alronz/ioti-nodejs-sdk.git"
+    "ioti-nodejs-sdk": "git+ssh://git@github.com/alronz/ioti-nodejs-sdk.git"
   }
 }
