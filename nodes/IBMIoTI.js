@@ -82,7 +82,7 @@ module.exports = function (RED) {
                 case 'createDevice':
                     iotIDevice.createDevice(msg.payload.device, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
                         }
@@ -91,7 +91,7 @@ module.exports = function (RED) {
                 case 'getDevicesPerId':
                     iotIDevice.getDevicesPerId(msg.payload.deviceId, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
                         }
@@ -100,7 +100,7 @@ module.exports = function (RED) {
                 case 'getDevicesForAuthUser':
                     iotIDevice.getDevicesForAuthUser(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
                         }
@@ -109,7 +109,7 @@ module.exports = function (RED) {
                 case 'deleteDevicePerId':
                     iotIDevice.deleteDevicePerId(msg.payload.deviceId, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
                         }
@@ -118,7 +118,7 @@ module.exports = function (RED) {
                 case 'deleteDeviceAttribute':
                     iotIDevice.deleteDeviceAttribute(msg.payload.deviceId, msg.payload.attributeName, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
                         }
@@ -127,7 +127,7 @@ module.exports = function (RED) {
                 case 'setDeviceAttribute':
                     iotIDevice.setDeviceAttribute(msg.payload.deviceId, msg.payload.attributeName, msg.payload.attributeValue, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
                         }
@@ -136,7 +136,7 @@ module.exports = function (RED) {
                 case 'getAllDevices':
                     iotIDevice.getAllDevices(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
                         }
@@ -145,7 +145,7 @@ module.exports = function (RED) {
                 case 'getDevicesPerUser':
                     iotIDevice.getDevicesPerUser(msg.payload.username, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
                         }
@@ -154,7 +154,7 @@ module.exports = function (RED) {
                 case 'updateDevice':
                     iotIDevice.updateDevice(msg.payload.deviceId, msg.payload.newDevice, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
                         }
@@ -172,7 +172,7 @@ module.exports = function (RED) {
                 case 'sendPayloadToMQTT':
                     iotIGlobal.sendPayloadToMQTT(msg.payload.outputType, msg.payload.deviceType, msg.payload.deviceId, msg.payload.type, msg.payload.payload, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIGlobal', api: switchValue, body: body, response: response});
                         }
@@ -181,7 +181,7 @@ module.exports = function (RED) {
                 case 'sendPushNotification':
                     iotIGlobal.sendPushNotification(msg.payload.pushNotification, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIGlobal', api: switchValue, body: body, response: response});
                         }
@@ -200,7 +200,7 @@ module.exports = function (RED) {
                 case 'createHEvent':
                     iotIHazardEvent.createHEvent(msg.payload.hazardEvent, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
                         }
@@ -209,7 +209,7 @@ module.exports = function (RED) {
                 case 'getHEventPerHEventId':
                     iotIHazardEvent.getHEventPerHEventId(msg.payload.hazardEventId, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
                         }
@@ -218,7 +218,7 @@ module.exports = function (RED) {
                 case 'getHEventPerId':
                     iotIHazardEvent.getHEventPerId(msg.payload.id, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
                         }
@@ -227,7 +227,7 @@ module.exports = function (RED) {
                 case 'getHEventsForAuthUser':
                     iotIHazardEvent.getHEventsForAuthUser(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
                         }
@@ -236,7 +236,7 @@ module.exports = function (RED) {
                 case 'deleteHEventPerId':
                     iotIHazardEvent.deleteHEventPerId(msg.payload.hazardEventId, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
                         }
@@ -245,7 +245,7 @@ module.exports = function (RED) {
                 case 'deleteHEventsPerUser':
                     iotIHazardEvent.deleteHEventsPerUser(msg.payload.username, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
                         }
@@ -254,7 +254,7 @@ module.exports = function (RED) {
                 case 'deleteHEventAttribute':
                     iotIHazardEvent.deleteHEventAttribute(msg.payload.hazardEventId, msg.payload.attributeName, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
                         }
@@ -263,7 +263,7 @@ module.exports = function (RED) {
                 case 'setHEventAttribute':
                     iotIHazardEvent.setHEventAttribute(msg.payload.hazardEventId, msg.payload.attributeName, msg.payload.attributeValue, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
                         }
@@ -272,7 +272,7 @@ module.exports = function (RED) {
                 case 'getAllHEvents':
                     iotIHazardEvent.getAllHEvents(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
                         }
@@ -281,7 +281,7 @@ module.exports = function (RED) {
                 case 'getHEventsAggregated':
                     iotIHazardEvent.getHEventsAggregated(msg.payload.queryParams, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
                         }
@@ -290,7 +290,7 @@ module.exports = function (RED) {
                 case 'updateHEventValidationType':
                     iotIHazardEvent.updateHEventValidationType(msg.payload.hazardEventId, msg.payload.validationType, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
                         }
@@ -309,7 +309,7 @@ module.exports = function (RED) {
                 case 'createJSCode':
                     iotIJSCode.createJSCode(msg.payload.jsCode, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
                         }
@@ -318,7 +318,7 @@ module.exports = function (RED) {
                 case 'updateAll':
                     iotIJSCode.updateAll(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
                         }
@@ -327,7 +327,7 @@ module.exports = function (RED) {
                 case 'getJSCodesPerShieldUUUID':
                     iotIJSCode.getJSCodesPerShieldUUUID(msg.payload.shieldUUUID, msg.payload.queryParams, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
                         }
@@ -336,7 +336,7 @@ module.exports = function (RED) {
                 case 'getCommonJSCodes':
                     iotIJSCode.getCommonJSCodes(msg.payload.queryParams, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
                         }
@@ -345,7 +345,7 @@ module.exports = function (RED) {
                 case 'getAllJSCodes':
                     iotIJSCode.getAllJSCodes(msg.payload.queryParams, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
                         }
@@ -354,7 +354,7 @@ module.exports = function (RED) {
                 case 'getJSCodesPerUser':
                     iotIJSCode.getJSCodesPerUser(msg.payload.username, msg.payload.queryParams, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
                         }
@@ -363,7 +363,7 @@ module.exports = function (RED) {
                 case 'updateJSCode':
                     iotIJSCode.updateJSCode(msg.payload.jsCodeId, msg.payload.code, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
                         }
@@ -382,7 +382,7 @@ module.exports = function (RED) {
                 case 'createPromotion':
                     iotIPromotion.createPromotion(msg.payload.promotion, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIPromotion', api: switchValue, body: body, response: response});
                         }
@@ -391,7 +391,7 @@ module.exports = function (RED) {
                 case 'getPromotionsPerId':
                     iotIPromotion.getPromotionsPerId(msg.payload.promotionId, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIPromotion', api: switchValue, body: body, response: response});
                         }
@@ -400,7 +400,7 @@ module.exports = function (RED) {
                 case 'deletePromotionPerId':
                     iotIPromotion.deletePromotionPerId(msg.payload.promotionId, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIPromotion', api: switchValue, body: body, response: response});
                         }
@@ -409,7 +409,7 @@ module.exports = function (RED) {
                 case 'deletePromotionAttribute':
                     iotIPromotion.deletePromotionAttribute(msg.payload.promotionId, msg.payload.attributeName, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIPromotion', api: switchValue, body: body, response: response});
                         }
@@ -418,7 +418,7 @@ module.exports = function (RED) {
                 case 'setPromotionAttribute':
                     iotIPromotion.setPromotionAttribute(msg.payload.promotionId, msg.payload.attributeName, msg.payload.attributeValue, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIPromotion', api: switchValue, body: body, response: response});
                         }
@@ -427,7 +427,7 @@ module.exports = function (RED) {
                 case 'getAllPromotions':
                     iotIPromotion.getAllPromotions(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIPromotion', api: switchValue, body: body, response: response});
                         }
@@ -446,7 +446,7 @@ module.exports = function (RED) {
                 case 'createRegistrationDevice':
                     iotIRegistration.createRegistrationDevice(msg.payload.device, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIRegistration', api: switchValue, body: body, response: response});
                         }
@@ -455,7 +455,7 @@ module.exports = function (RED) {
                 case 'getRegistrationDevicePerId':
                     iotIRegistration.getRegistrationDevicePerId(msg.payload.deviceId, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIRegistration', api: switchValue, body: body, response: response});
                         }
@@ -464,7 +464,7 @@ module.exports = function (RED) {
                 case 'getRegistrationsPerUser':
                     iotIRegistration.getRegistrationsPerUser(msg.payload.username, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIRegistration', api: switchValue, body: body, response: response});
                         }
@@ -473,7 +473,7 @@ module.exports = function (RED) {
                 case 'getRegistrationsPerProvider':
                     iotIRegistration.getRegistrationsPerProvider(msg.payload.provider, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIRegistration', api: switchValue, body: body, response: response});
                         }
@@ -482,7 +482,7 @@ module.exports = function (RED) {
                 case 'deleteRegistrationPerDeviceId':
                     iotIRegistration.deleteRegistrationPerDeviceId(msg.payload.deviceId, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIRegistration', api: switchValue, body: body, response: response});
                         }
@@ -491,7 +491,7 @@ module.exports = function (RED) {
                 case 'updateRegistrationDevice':
                     iotIRegistration.updateRegistrationDevice(msg.payload.deviceId, msg.payload.newDevice, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIRegistration', api: switchValue, body: body, response: response});
                         }
@@ -510,7 +510,7 @@ module.exports = function (RED) {
                 case 'createShieldAssociation':
                     iotIShieldAssociation.createShieldAssociation(msg.payload.shieldAssociation, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -524,7 +524,7 @@ module.exports = function (RED) {
                 case 'getShieldAssociationsPerId':
                     iotIShieldAssociation.getShieldAssociationsPerId(msg.payload.shieldAssociationId, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -538,7 +538,7 @@ module.exports = function (RED) {
                 case 'getShieldAssociationsForAuthUser':
                     iotIShieldAssociation.getShieldAssociationsForAuthUser(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -552,7 +552,7 @@ module.exports = function (RED) {
                 case 'deleteShieldAssociationPerId':
                     iotIShieldAssociation.deleteShieldAssociationPerId(msg.payload.shieldAssociationId, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -566,7 +566,7 @@ module.exports = function (RED) {
                 case 'deleteAllShieldAssociations':
                     iotIShieldAssociation.deleteAllShieldAssociations(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -580,7 +580,7 @@ module.exports = function (RED) {
                 case 'deleteShieldAssociationAttribute':
                     iotIShieldAssociation.deleteShieldAssociationAttribute(msg.payload.shieldAssociationId, msg.payload.attributeName, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -594,7 +594,7 @@ module.exports = function (RED) {
                 case 'setShieldAssociationAttribute':
                     iotIShieldAssociation.setShieldAssociationAttribute(msg.payload.shieldAssociationId, msg.payload.attributeName, msg.payload.attributeValue, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -608,7 +608,7 @@ module.exports = function (RED) {
                 case 'getAllShieldAssociations':
                     iotIShieldAssociation.getAllShieldAssociations(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -622,7 +622,7 @@ module.exports = function (RED) {
                 case 'getShieldAssociationsPerUser':
                     iotIShieldAssociation.getShieldAssociationsPerUser(msg.payload.username, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -636,7 +636,7 @@ module.exports = function (RED) {
                 case 'setShieldAssociationOnCloud':
                     iotIShieldAssociation.setShieldAssociationOnCloud(msg.payload.shieldAssociation, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -660,7 +660,7 @@ module.exports = function (RED) {
                 case 'createShield':
                     iotIShield.createShield(msg.payload.shield, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
                         }
@@ -669,7 +669,7 @@ module.exports = function (RED) {
                 case 'getShieldsPerId':
                     iotIShield.getShieldsPerId(msg.payload.shieldId, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
                         }
@@ -678,7 +678,7 @@ module.exports = function (RED) {
                 case 'getShieldsPerUser':
                     iotIShield.getShieldsPerUser(msg.payload.username, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
                         }
@@ -687,7 +687,7 @@ module.exports = function (RED) {
                 case 'getShieldsPerUUID':
                     iotIShield.getShieldsPerUUID(msg.payload.uuid, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
                         }
@@ -696,7 +696,7 @@ module.exports = function (RED) {
                 case 'deleteShieldPerId':
                     iotIShield.deleteShieldPerId(msg.payload.shieldId, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
                         }
@@ -705,7 +705,7 @@ module.exports = function (RED) {
                 case 'deleteAllShields':
                     iotIShield.deleteAllShields(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
                         }
@@ -714,7 +714,7 @@ module.exports = function (RED) {
                 case 'deleteShieldAttribute':
                     iotIShield.deleteShieldAttribute(msg.payload.shieldId, msg.payload.attributeName, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
                         }
@@ -723,7 +723,7 @@ module.exports = function (RED) {
                 case 'setShieldAttribute':
                     iotIShield.setShieldAttribute(msg.payload.shieldId, msg.payload.attributeName, msg.payload.attributeValue, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
                         }
@@ -732,7 +732,7 @@ module.exports = function (RED) {
                 case 'getAllShields':
                     iotIShield.getAllShields(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
                         }
@@ -751,7 +751,7 @@ module.exports = function (RED) {
                 case 'createUser':
                     iotIUser.createUser(msg.payload.user, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
                         }
@@ -760,7 +760,7 @@ module.exports = function (RED) {
                 case 'getAuthUser':
                     iotIUser.getAuthUser(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
                         }
@@ -769,7 +769,7 @@ module.exports = function (RED) {
                 case 'checkUserLogin':
                     iotIUser.checkUserLogin(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
                         }
@@ -778,7 +778,7 @@ module.exports = function (RED) {
                 case 'checkUserLogout':
                     iotIUser.checkUserLogout(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
                         }
@@ -787,7 +787,7 @@ module.exports = function (RED) {
                 case 'deleteUserPerUserName':
                     iotIUser.deleteUserPerUserName(msg.payload.username, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
                         }
@@ -796,7 +796,7 @@ module.exports = function (RED) {
                 case 'deleteUserAttribute':
                     iotIUser.deleteUserAttribute(msg.payload.userName, msg.payload.attributeName, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
                         }
@@ -805,7 +805,7 @@ module.exports = function (RED) {
                 case 'setUserAttribute':
                     iotIUser.setUserAttribute(msg.payload.userName, msg.payload.attributeName, msg.payload.attributeValue, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
                         }
@@ -814,7 +814,7 @@ module.exports = function (RED) {
                 case 'setUserAccessLevel':
                     iotIUser.setUserAccessLevel(msg.payload.userName, msg.payload.accessLevel, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
                         }
@@ -823,7 +823,7 @@ module.exports = function (RED) {
                 case 'getAllUsers':
                     iotIUser.getAllUsers(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
                         }
@@ -832,7 +832,7 @@ module.exports = function (RED) {
                 case 'getUserPerUserName':
                     iotIUser.getUserPerUserName(msg.payload.userName, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
                         }
@@ -841,7 +841,7 @@ module.exports = function (RED) {
                 case 'getUserSensors':
                     iotIUser.getUserSensors(function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
                         }
@@ -850,7 +850,7 @@ module.exports = function (RED) {
                 case 'updateUserDevice':
                     iotIUser.updateUserDevice(msg.payload.userName, msg.payload.deviceId, function (error, body, response) {
                         if (error) {
-                            node.error("Api call failed, error: " + JSON.stringify(error));
+                            node.send({error: 'Api call failed, error:' + JSON.stringify(error)});
                         } else {
                             node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
                         }
