@@ -340,10 +340,10 @@
 <p>Below are the list of all the supported APIs with their required paramters:</p>
 <h3>All (based on input)</h3>
 
-You can call any Api by providing the <b>msg.payload.apiGroup</b> and <b>msg.payload.apiType</b> values as input to the node.
+You can call any Api by providing the <b>msg.payload.apiGroup</b> and <b>msg.payload.api</b> values as input to the node.
 
 <b>msg.payload.apiGroup</b> represents the group where the API exists which could be one of the following values (IotIUser,IotIDevice,IotIGlobal,IotIHazardEvent,IotIJSCode,IotIPromotion,IotIRegistration,IotIShieldAssociation,IotIShield) that represent the groups below.
-<b>msg.payload.apiType</b> represents the API we want to call in each group, for example "createDevice,sendPayloadToMQTT,createHEvent, etc.."
+<b>msg.payload.api</b> represents the API we want to call in each group, for example "createDevice,sendPayloadToMQTT,createHEvent, etc.."
 
 
 <h3>Device Apis</h3>
