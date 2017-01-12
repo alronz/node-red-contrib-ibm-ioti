@@ -66,8 +66,8 @@ module.exports = function(RED) {
         }
 
         function handleDeviceApis(msg) {
-
-            switch (config.apisDevice) {
+            var switchValue = config.apisDevice ? config.apisDevice : msg.payload.apiType;
+            switch (switchValue) {
                 case 'createDevice':
                     iotIDevice.createDevice(msg.payload.device, function(error, body, response) {
                         if (error) {
@@ -156,8 +156,8 @@ module.exports = function(RED) {
         }
 
         function handleGlobalApis(msg) {
-
-            switch (config.apisGlobal) {
+            var switchValue = config.apisGlobal ? config.apisGlobal : msg.payload.apiType;
+            switch (switchValue) {
                 case 'sendPayloadToMQTT':
                     iotIGlobal.sendPayloadToMQTT(msg.payload.outputType, msg.payload.deviceType, msg.payload.deviceId, msg.payload.type, msg.payload.payload, function(error, body, response) {
                         if (error) {
@@ -184,8 +184,8 @@ module.exports = function(RED) {
         }
 
         function handleHEventApis(msg) {
-
-            switch (config.apisHazardEvent) {
+            var switchValue = config.apisHazardEvent ? config.apisHazardEvent : msg.payload.apiType;
+            switch (switchValue) {
                 case 'createHEvent':
                     iotIHazardEvent.createHEvent(msg.payload.hazardEvent, function(error, body, response) {
                         if (error) {
@@ -293,8 +293,8 @@ module.exports = function(RED) {
         }
 
         function handleJSCodeApis(msg) {
-
-            switch (config.apisJSCode) {
+            var switchValue = config.apisJSCode ? config.apisJSCode : msg.payload.apiType;
+            switch (switchValue) {
                 case 'createJSCode':
                     iotIJSCode.createJSCode(msg.payload.jsCode, function(error, body, response) {
                         if (error) {
@@ -366,8 +366,8 @@ module.exports = function(RED) {
         }
 
         function handlePromotionApis(msg) {
-
-            switch (config.apisPromotion) {
+            var switchValue = config.apisPromotion ? config.apisPromotion : msg.payload.apiType;
+            switch (switchValue) {
                 case 'createPromotion':
                     iotIPromotion.createPromotion(msg.payload.promotion, function(error, body, response) {
                         if (error) {
@@ -430,8 +430,8 @@ module.exports = function(RED) {
         }
 
         function handleRegistrationApis(msg) {
-
-            switch (config.apisRegistration) {
+            var switchValue = config.apisRegistration ? config.apisRegistration : msg.payload.apiType;
+            switch (switchValue) {
                 case 'createRegistrationDevice':
                     iotIRegistration.createRegistrationDevice(msg.payload.device, function(error, body, response) {
                         if (error) {
@@ -494,8 +494,8 @@ module.exports = function(RED) {
         }
 
         function handleShieldAssociationApis(msg) {
-
-            switch (config.apisShieldAssociation) {
+            var switchValue = config.apisShieldAssociation ? config.apisShieldAssociation : msg.payload.apiType;
+            switch (switchValue) {
                 case 'createShieldAssociation':
                     iotIShieldAssociation.createShieldAssociation(msg.payload.shieldAssociation, function(error, body, response) {
                         if (error) {
@@ -594,7 +594,8 @@ module.exports = function(RED) {
 
         function handleShieldApis(msg) {
 
-            switch (config.apisShield) {
+            var switchValue = config.apisShield ? config.apisShield : msg.payload.apiType;
+            switch (switchValue) {
                 case 'createShield':
                     iotIShield.createShield(msg.payload.shield, function(error, body, response) {
                         if (error) {
@@ -685,7 +686,8 @@ module.exports = function(RED) {
 
         function handleUserApis(msg) {
 
-            switch (config.apisUser) {
+            var switchValue = config.apisUser ? config.apisUser : msg.payload.apiType;
+            switch (switchValue) {
                 case 'createUser':
                     iotIUser.createUser(msg.payload.user, function(error, body, response) {
                         if (error) {
@@ -801,6 +803,43 @@ module.exports = function(RED) {
 
         }
 
+        function handleAll(msg) {
+
+            switch (msg.payload.apiGroup) {
+                case 'IotIUser':
+                    handleUserApis(msg);
+                    break;
+                case 'IotIDevice':
+                    handleDeviceApis(msg);
+                    break;
+                case 'IotIGlobal':
+                    handleGlobalApis(msg);
+                    break;
+                case 'IotIHazardEvent':
+                    handleHEventApis(msg);
+                    break;
+                case 'IotIJSCode':
+                    handleJSCodeApis(msg);
+                    break;
+                case 'IotIPromotion':
+                    handlePromotionApis(msg);
+                    break;
+                case 'IotIRegistration':
+                    handleRegistrationApis(msg);
+                    break;
+                case 'IotIShieldAssociation':
+                    handleShieldAssociationApis(msg);
+                    break;
+                case 'IotIShield':
+                    handleShieldApis(msg);
+                    break;
+                default:
+                    node.error("No matched apiGroup (msg.payload.apiGroup)");
+                    break;
+            }
+
+        }
+
         function start() {
             node.on('input', function(msg) {
                 if (config.apisDevice) {
@@ -821,6 +860,8 @@ module.exports = function(RED) {
                     handleShieldApis(msg);
                 } else if (config.apisUser) {
                     handleUserApis(msg);
+                } else if (config.client === 'based_on_input') {
+                    handleAll(msg);
                 }
             });
         }
