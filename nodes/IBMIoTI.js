@@ -88,7 +88,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIDevice',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -101,7 +106,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIDevice',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -114,7 +124,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIDevice',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -127,7 +142,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIDevice',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -140,7 +160,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIDevice',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -153,7 +178,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIDevice',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -166,7 +196,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIDevice',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -179,7 +214,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIDevice',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -192,7 +232,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIDevice', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIDevice',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -214,7 +259,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIGlobal', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIGlobal',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -227,7 +277,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIGlobal', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIGlobal',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -250,7 +305,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIHazardEvent',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -263,7 +323,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIHazardEvent',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -276,7 +341,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIHazardEvent',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -289,7 +359,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIHazardEvent',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -302,7 +377,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIHazardEvent',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -315,7 +395,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIHazardEvent',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -328,7 +413,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIHazardEvent',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -341,7 +431,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIHazardEvent',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -354,7 +449,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIHazardEvent',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -367,7 +467,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIHazardEvent',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -380,7 +485,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIHazardEvent', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIHazardEvent',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -403,7 +513,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIJSCode',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -416,7 +531,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIJSCode',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -429,7 +549,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIJSCode',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -442,7 +567,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIJSCode',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -455,7 +585,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIJSCode',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -468,7 +603,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIJSCode',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -481,7 +621,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIJSCode', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIJSCode',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -504,7 +649,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIPromotion', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIPromotion',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -517,7 +667,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIPromotion', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIPromotion',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -530,7 +685,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIPromotion', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIPromotion',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -543,7 +703,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIPromotion', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIPromotion',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -556,7 +721,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIPromotion', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIPromotion',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -569,7 +739,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIPromotion', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIPromotion',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -592,7 +767,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIRegistration', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIRegistration',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -605,7 +785,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIRegistration', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIRegistration',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -618,7 +803,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIRegistration', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIRegistration',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -631,7 +821,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIRegistration', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIRegistration',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -644,7 +839,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIRegistration', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIRegistration',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -657,7 +857,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIRegistration', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIRegistration',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -870,7 +1075,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIShield',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -883,7 +1093,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIShield',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -896,7 +1111,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIShield',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -909,7 +1129,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIShield',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -922,7 +1147,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIShield',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -935,7 +1165,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIShield',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -948,7 +1183,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIShield',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -961,7 +1201,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIShield',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -974,7 +1219,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIShield', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIShield',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -997,7 +1247,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIUser',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -1010,7 +1265,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIUser',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -1023,7 +1283,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIUser',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -1036,7 +1301,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIUser',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -1049,7 +1319,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIUser',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -1062,7 +1337,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIUser',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -1075,7 +1355,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIUser',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -1088,7 +1373,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIUser',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -1101,7 +1391,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIUser',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -1114,7 +1409,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIUser',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -1127,7 +1427,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIUser',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
@@ -1140,7 +1445,12 @@ module.exports = function (RED) {
                                 error: 'Api call failed, error:' + JSON.stringify(error)
                             });
                         } else {
-                            node.send({apiGroup: 'IotIUser', api: switchValue, body: body, response: response});
+                            node.send({
+                                apiGroup: 'IotIUser',
+                                api: switchValue,
+                                body: body,
+                                response: response
+                            });
                         }
                     });
                     break;
