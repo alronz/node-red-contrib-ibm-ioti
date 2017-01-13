@@ -1,6 +1,6 @@
 var IotIClient = require('ibmioti');
 
-module.exports = function (RED) {
+module.exports = function(RED) {
 
     function IBMIoTI(config) {
         RED.nodes.createNode(this, config);
@@ -41,7 +41,7 @@ module.exports = function (RED) {
 
         function testCredentials(serviceConfig) {
             var iotIUser = new IotIClient.IotIUser(serviceConfig);
-            iotIUser.checkUserLogin(function (error, body, response) {
+            iotIUser.checkUserLogin(function(error, body, response) {
                 if (error) {
                     node.status({fill: "red", shape: "ring", text: "disconnected"});
                     node.error("Credentials are not valid !")
@@ -80,7 +80,7 @@ module.exports = function (RED) {
             var switchValue = msg.payload.api ? msg.payload.api : config.apisDevice;
             switch (switchValue) {
                 case 'createDevice':
-                    iotIDevice.createDevice(msg.payload.device, function (error, body, response) {
+                    iotIDevice.createDevice(msg.payload.device, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIDevice',
@@ -91,14 +91,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIDevice',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getDevicesPerId':
-                    iotIDevice.getDevicesPerId(msg.payload.deviceId, function (error, body, response) {
+                    iotIDevice.getDevicesPerId(msg.payload.deviceId, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIDevice',
@@ -109,14 +109,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIDevice',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getDevicesForAuthUser':
-                    iotIDevice.getDevicesForAuthUser(function (error, body, response) {
+                    iotIDevice.getDevicesForAuthUser(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIDevice',
@@ -127,14 +127,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIDevice',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteDevicePerId':
-                    iotIDevice.deleteDevicePerId(msg.payload.deviceId, function (error, body, response) {
+                    iotIDevice.deleteDevicePerId(msg.payload.deviceId, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIDevice',
@@ -145,14 +145,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIDevice',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteDeviceAttribute':
-                    iotIDevice.deleteDeviceAttribute(msg.payload.deviceId, msg.payload.attributeName, function (error, body, response) {
+                    iotIDevice.deleteDeviceAttribute(msg.payload.deviceId, msg.payload.attributeName, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIDevice',
@@ -163,14 +163,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIDevice',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'setDeviceAttribute':
-                    iotIDevice.setDeviceAttribute(msg.payload.deviceId, msg.payload.attributeName, msg.payload.attributeValue, function (error, body, response) {
+                    iotIDevice.setDeviceAttribute(msg.payload.deviceId, msg.payload.attributeName, msg.payload.attributeValue, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIDevice',
@@ -181,14 +181,13 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIDevice',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
                             });
                         }
                     });
                     break;
                 case 'getAllDevices':
-                    iotIDevice.getAllDevices(function (error, body, response) {
+                    iotIDevice.getAllDevices(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIDevice',
@@ -199,14 +198,13 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIDevice',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
                             });
                         }
                     });
                     break;
                 case 'getDevicesPerUser':
-                    iotIDevice.getDevicesPerUser(msg.payload.username, function (error, body, response) {
+                    iotIDevice.getDevicesPerUser(msg.payload.username, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIDevice',
@@ -217,14 +215,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIDevice',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'updateDevice':
-                    iotIDevice.updateDevice(msg.payload.deviceId, msg.payload.newDevice, function (error, body, response) {
+                    iotIDevice.updateDevice(msg.payload.deviceId, msg.payload.newDevice, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIDevice',
@@ -235,8 +233,8 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIDevice',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
@@ -251,7 +249,7 @@ module.exports = function (RED) {
             var switchValue = msg.payload.api ? msg.payload.api : config.apisGlobal;
             switch (switchValue) {
                 case 'sendPayloadToMQTT':
-                    iotIGlobal.sendPayloadToMQTT(msg.payload.outputType, msg.payload.deviceType, msg.payload.deviceId, msg.payload.type, msg.payload.payload, function (error, body, response) {
+                    iotIGlobal.sendPayloadToMQTT(msg.payload.outputType, msg.payload.deviceType, msg.payload.deviceId, msg.payload.type, msg.payload.payload, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIGlobal',
@@ -262,14 +260,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIGlobal',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'sendPushNotification':
-                    iotIGlobal.sendPushNotification(msg.payload.pushNotification, function (error, body, response) {
+                    iotIGlobal.sendPushNotification(msg.payload.pushNotification, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIGlobal',
@@ -280,8 +278,8 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIGlobal',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
@@ -297,7 +295,7 @@ module.exports = function (RED) {
             var switchValue = msg.payload.api ? msg.payload.api : config.apisHazardEvent;
             switch (switchValue) {
                 case 'createHEvent':
-                    iotIHazardEvent.createHEvent(msg.payload.hazardEvent, function (error, body, response) {
+                    iotIHazardEvent.createHEvent(msg.payload.hazardEvent, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
@@ -308,14 +306,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getHEventPerHEventId':
-                    iotIHazardEvent.getHEventPerHEventId(msg.payload.hazardEventId, function (error, body, response) {
+                    iotIHazardEvent.getHEventPerHEventId(msg.payload.hazardEventId, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
@@ -326,14 +324,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getHEventPerId':
-                    iotIHazardEvent.getHEventPerId(msg.payload.id, function (error, body, response) {
+                    iotIHazardEvent.getHEventPerId(msg.payload.id, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
@@ -344,14 +342,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getHEventsForAuthUser':
-                    iotIHazardEvent.getHEventsForAuthUser(function (error, body, response) {
+                    iotIHazardEvent.getHEventsForAuthUser(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
@@ -362,14 +360,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteHEventPerId':
-                    iotIHazardEvent.deleteHEventPerId(msg.payload.hazardEventId, function (error, body, response) {
+                    iotIHazardEvent.deleteHEventPerId(msg.payload.hazardEventId, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
@@ -380,14 +378,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteHEventsPerUser':
-                    iotIHazardEvent.deleteHEventsPerUser(msg.payload.username, function (error, body, response) {
+                    iotIHazardEvent.deleteHEventsPerUser(msg.payload.username, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
@@ -398,14 +396,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteHEventAttribute':
-                    iotIHazardEvent.deleteHEventAttribute(msg.payload.hazardEventId, msg.payload.attributeName, function (error, body, response) {
+                    iotIHazardEvent.deleteHEventAttribute(msg.payload.hazardEventId, msg.payload.attributeName, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
@@ -416,14 +414,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'setHEventAttribute':
-                    iotIHazardEvent.setHEventAttribute(msg.payload.hazardEventId, msg.payload.attributeName, msg.payload.attributeValue, function (error, body, response) {
+                    iotIHazardEvent.setHEventAttribute(msg.payload.hazardEventId, msg.payload.attributeName, msg.payload.attributeValue, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
@@ -434,14 +432,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getAllHEvents':
-                    iotIHazardEvent.getAllHEvents(function (error, body, response) {
+                    iotIHazardEvent.getAllHEvents(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
@@ -452,14 +450,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getHEventsAggregated':
-                    iotIHazardEvent.getHEventsAggregated(msg.payload.queryParams, function (error, body, response) {
+                    iotIHazardEvent.getHEventsAggregated(msg.payload.queryParams, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
@@ -470,14 +468,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'updateHEventValidationType':
-                    iotIHazardEvent.updateHEventValidationType(msg.payload.hazardEventId, msg.payload.validationType, function (error, body, response) {
+                    iotIHazardEvent.updateHEventValidationType(msg.payload.hazardEventId, msg.payload.validationType, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
@@ -488,8 +486,8 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIHazardEvent',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
@@ -505,7 +503,7 @@ module.exports = function (RED) {
             var switchValue = msg.payload.api ? msg.payload.api : config.apisJSCode;
             switch (switchValue) {
                 case 'createJSCode':
-                    iotIJSCode.createJSCode(msg.payload.jsCode, function (error, body, response) {
+                    iotIJSCode.createJSCode(msg.payload.jsCode, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
@@ -516,14 +514,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'updateAll':
-                    iotIJSCode.updateAll(function (error, body, response) {
+                    iotIJSCode.updateAll(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
@@ -534,14 +532,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getJSCodesPerShieldUUUID':
-                    iotIJSCode.getJSCodesPerShieldUUUID(msg.payload.shieldUUUID, msg.payload.queryParams, function (error, body, response) {
+                    iotIJSCode.getJSCodesPerShieldUUUID(msg.payload.shieldUUUID, msg.payload.queryParams, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
@@ -552,14 +550,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getCommonJSCodes':
-                    iotIJSCode.getCommonJSCodes(msg.payload.queryParams, function (error, body, response) {
+                    iotIJSCode.getCommonJSCodes(msg.payload.queryParams, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
@@ -570,14 +568,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getAllJSCodes':
-                    iotIJSCode.getAllJSCodes(msg.payload.queryParams, function (error, body, response) {
+                    iotIJSCode.getAllJSCodes(msg.payload.queryParams, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
@@ -588,14 +586,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getJSCodesPerUser':
-                    iotIJSCode.getJSCodesPerUser(msg.payload.username, msg.payload.queryParams, function (error, body, response) {
+                    iotIJSCode.getJSCodesPerUser(msg.payload.username, msg.payload.queryParams, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
@@ -606,14 +604,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'updateJSCode':
-                    iotIJSCode.updateJSCode(msg.payload.jsCodeId, msg.payload.code, function (error, body, response) {
+                    iotIJSCode.updateJSCode(msg.payload.jsCodeId, msg.payload.code, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
@@ -624,8 +622,8 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIJSCode',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
@@ -641,7 +639,7 @@ module.exports = function (RED) {
             var switchValue = msg.payload.api ? msg.payload.api : config.apisPromotion;
             switch (switchValue) {
                 case 'createPromotion':
-                    iotIPromotion.createPromotion(msg.payload.promotion, function (error, body, response) {
+                    iotIPromotion.createPromotion(msg.payload.promotion, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIPromotion',
@@ -652,14 +650,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIPromotion',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getPromotionsPerId':
-                    iotIPromotion.getPromotionsPerId(msg.payload.promotionId, function (error, body, response) {
+                    iotIPromotion.getPromotionsPerId(msg.payload.promotionId, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIPromotion',
@@ -670,14 +668,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIPromotion',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deletePromotionPerId':
-                    iotIPromotion.deletePromotionPerId(msg.payload.promotionId, function (error, body, response) {
+                    iotIPromotion.deletePromotionPerId(msg.payload.promotionId, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIPromotion',
@@ -688,14 +686,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIPromotion',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deletePromotionAttribute':
-                    iotIPromotion.deletePromotionAttribute(msg.payload.promotionId, msg.payload.attributeName, function (error, body, response) {
+                    iotIPromotion.deletePromotionAttribute(msg.payload.promotionId, msg.payload.attributeName, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIPromotion',
@@ -706,14 +704,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIPromotion',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'setPromotionAttribute':
-                    iotIPromotion.setPromotionAttribute(msg.payload.promotionId, msg.payload.attributeName, msg.payload.attributeValue, function (error, body, response) {
+                    iotIPromotion.setPromotionAttribute(msg.payload.promotionId, msg.payload.attributeName, msg.payload.attributeValue, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIPromotion',
@@ -724,14 +722,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIPromotion',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getAllPromotions':
-                    iotIPromotion.getAllPromotions(function (error, body, response) {
+                    iotIPromotion.getAllPromotions(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIPromotion',
@@ -742,8 +740,8 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIPromotion',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
@@ -759,7 +757,7 @@ module.exports = function (RED) {
             var switchValue = msg.payload.api ? msg.payload.api : config.apisRegistration;
             switch (switchValue) {
                 case 'createRegistrationDevice':
-                    iotIRegistration.createRegistrationDevice(msg.payload.device, function (error, body, response) {
+                    iotIRegistration.createRegistrationDevice(msg.payload.device, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIRegistration',
@@ -770,14 +768,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIRegistration',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getRegistrationDevicePerId':
-                    iotIRegistration.getRegistrationDevicePerId(msg.payload.deviceId, function (error, body, response) {
+                    iotIRegistration.getRegistrationDevicePerId(msg.payload.deviceId, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIRegistration',
@@ -788,14 +786,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIRegistration',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getRegistrationsPerUser':
-                    iotIRegistration.getRegistrationsPerUser(msg.payload.username, function (error, body, response) {
+                    iotIRegistration.getRegistrationsPerUser(msg.payload.username, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIRegistration',
@@ -806,14 +804,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIRegistration',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getRegistrationsPerProvider':
-                    iotIRegistration.getRegistrationsPerProvider(msg.payload.provider, function (error, body, response) {
+                    iotIRegistration.getRegistrationsPerProvider(msg.payload.provider, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIRegistration',
@@ -824,14 +822,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIRegistration',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteRegistrationPerDeviceId':
-                    iotIRegistration.deleteRegistrationPerDeviceId(msg.payload.deviceId, function (error, body, response) {
+                    iotIRegistration.deleteRegistrationPerDeviceId(msg.payload.deviceId, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIRegistration',
@@ -842,14 +840,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIRegistration',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'updateRegistrationDevice':
-                    iotIRegistration.updateRegistrationDevice(msg.payload.deviceId, msg.payload.newDevice, function (error, body, response) {
+                    iotIRegistration.updateRegistrationDevice(msg.payload.deviceId, msg.payload.newDevice, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIRegistration',
@@ -860,8 +858,8 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIRegistration',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
@@ -877,7 +875,7 @@ module.exports = function (RED) {
             var switchValue = msg.payload.api ? msg.payload.api : config.apisShieldAssociation;
             switch (switchValue) {
                 case 'createShieldAssociation':
-                    iotIShieldAssociation.createShieldAssociation(msg.payload.shieldAssociation, function (error, body, response) {
+                    iotIShieldAssociation.createShieldAssociation(msg.payload.shieldAssociation, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -888,14 +886,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getShieldAssociationsPerId':
-                    iotIShieldAssociation.getShieldAssociationsPerId(msg.payload.shieldAssociationId, function (error, body, response) {
+                    iotIShieldAssociation.getShieldAssociationsPerId(msg.payload.shieldAssociationId, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -906,14 +904,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getShieldAssociationsForAuthUser':
-                    iotIShieldAssociation.getShieldAssociationsForAuthUser(function (error, body, response) {
+                    iotIShieldAssociation.getShieldAssociationsForAuthUser(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -924,14 +922,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteShieldAssociationPerId':
-                    iotIShieldAssociation.deleteShieldAssociationPerId(msg.payload.shieldAssociationId, function (error, body, response) {
+                    iotIShieldAssociation.deleteShieldAssociationPerId(msg.payload.shieldAssociationId, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -942,14 +940,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteAllShieldAssociations':
-                    iotIShieldAssociation.deleteAllShieldAssociations(function (error, body, response) {
+                    iotIShieldAssociation.deleteAllShieldAssociations(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -960,14 +958,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteShieldAssociationAttribute':
-                    iotIShieldAssociation.deleteShieldAssociationAttribute(msg.payload.shieldAssociationId, msg.payload.attributeName, function (error, body, response) {
+                    iotIShieldAssociation.deleteShieldAssociationAttribute(msg.payload.shieldAssociationId, msg.payload.attributeName, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -978,14 +976,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'setShieldAssociationAttribute':
-                    iotIShieldAssociation.setShieldAssociationAttribute(msg.payload.shieldAssociationId, msg.payload.attributeName, msg.payload.attributeValue, function (error, body, response) {
+                    iotIShieldAssociation.setShieldAssociationAttribute(msg.payload.shieldAssociationId, msg.payload.attributeName, msg.payload.attributeValue, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -996,14 +994,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getAllShieldAssociations':
-                    iotIShieldAssociation.getAllShieldAssociations(function (error, body, response) {
+                    iotIShieldAssociation.getAllShieldAssociations(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -1014,14 +1012,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getShieldAssociationsPerUser':
-                    iotIShieldAssociation.getShieldAssociationsPerUser(msg.payload.username, function (error, body, response) {
+                    iotIShieldAssociation.getShieldAssociationsPerUser(msg.payload.username, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -1032,14 +1030,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'setShieldAssociationOnCloud':
-                    iotIShieldAssociation.setShieldAssociationOnCloud(msg.payload.shieldAssociation, function (error, body, response) {
+                    iotIShieldAssociation.setShieldAssociationOnCloud(msg.payload.shieldAssociation, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
@@ -1050,8 +1048,8 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShieldAssociation',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
@@ -1067,7 +1065,7 @@ module.exports = function (RED) {
             var switchValue = msg.payload.api ? msg.payload.api : config.apisShield;
             switch (switchValue) {
                 case 'createShield':
-                    iotIShield.createShield(msg.payload.shield, function (error, body, response) {
+                    iotIShield.createShield(msg.payload.shield, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShield',
@@ -1078,14 +1076,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShield',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getShieldsPerId':
-                    iotIShield.getShieldsPerId(msg.payload.shieldId, function (error, body, response) {
+                    iotIShield.getShieldsPerId(msg.payload.shieldId, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShield',
@@ -1096,14 +1094,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShield',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getShieldsPerUser':
-                    iotIShield.getShieldsPerUser(msg.payload.username, function (error, body, response) {
+                    iotIShield.getShieldsPerUser(msg.payload.username, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShield',
@@ -1114,14 +1112,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShield',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getShieldsPerUUID':
-                    iotIShield.getShieldsPerUUID(msg.payload.uuid, function (error, body, response) {
+                    iotIShield.getShieldsPerUUID(msg.payload.uuid, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShield',
@@ -1132,14 +1130,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShield',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteShieldPerId':
-                    iotIShield.deleteShieldPerId(msg.payload.shieldId, function (error, body, response) {
+                    iotIShield.deleteShieldPerId(msg.payload.shieldId, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShield',
@@ -1150,14 +1148,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShield',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteAllShields':
-                    iotIShield.deleteAllShields(function (error, body, response) {
+                    iotIShield.deleteAllShields(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShield',
@@ -1168,14 +1166,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShield',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteShieldAttribute':
-                    iotIShield.deleteShieldAttribute(msg.payload.shieldId, msg.payload.attributeName, function (error, body, response) {
+                    iotIShield.deleteShieldAttribute(msg.payload.shieldId, msg.payload.attributeName, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShield',
@@ -1186,14 +1184,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShield',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'setShieldAttribute':
-                    iotIShield.setShieldAttribute(msg.payload.shieldId, msg.payload.attributeName, msg.payload.attributeValue, function (error, body, response) {
+                    iotIShield.setShieldAttribute(msg.payload.shieldId, msg.payload.attributeName, msg.payload.attributeValue, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShield',
@@ -1204,14 +1202,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShield',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getAllShields':
-                    iotIShield.getAllShields(function (error, body, response) {
+                    iotIShield.getAllShields(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIShield',
@@ -1222,8 +1220,8 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIShield',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
@@ -1239,7 +1237,7 @@ module.exports = function (RED) {
             var switchValue = msg.payload.api ? msg.payload.api : config.apisUser;
             switch (switchValue) {
                 case 'createUser':
-                    iotIUser.createUser(msg.payload.user, function (error, body, response) {
+                    iotIUser.createUser(msg.payload.user, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIUser',
@@ -1250,14 +1248,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIUser',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getAuthUser':
-                    iotIUser.getAuthUser(function (error, body, response) {
+                    iotIUser.getAuthUser(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIUser',
@@ -1268,14 +1266,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIUser',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'checkUserLogin':
-                    iotIUser.checkUserLogin(function (error, body, response) {
+                    iotIUser.checkUserLogin(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIUser',
@@ -1286,14 +1284,13 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIUser',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
                             });
                         }
                     });
                     break;
                 case 'checkUserLogout':
-                    iotIUser.checkUserLogout(function (error, body, response) {
+                    iotIUser.checkUserLogout(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIUser',
@@ -1304,14 +1301,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIUser',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteUserPerUserName':
-                    iotIUser.deleteUserPerUserName(msg.payload.username, function (error, body, response) {
+                    iotIUser.deleteUserPerUserName(msg.payload.username, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIUser',
@@ -1322,14 +1319,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIUser',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'deleteUserAttribute':
-                    iotIUser.deleteUserAttribute(msg.payload.userName, msg.payload.attributeName, function (error, body, response) {
+                    iotIUser.deleteUserAttribute(msg.payload.userName, msg.payload.attributeName, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIUser',
@@ -1340,14 +1337,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIUser',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'setUserAttribute':
-                    iotIUser.setUserAttribute(msg.payload.userName, msg.payload.attributeName, msg.payload.attributeValue, function (error, body, response) {
+                    iotIUser.setUserAttribute(msg.payload.userName, msg.payload.attributeName, msg.payload.attributeValue, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIUser',
@@ -1358,14 +1355,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIUser',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'setUserAccessLevel':
-                    iotIUser.setUserAccessLevel(msg.payload.userName, msg.payload.accessLevel, function (error, body, response) {
+                    iotIUser.setUserAccessLevel(msg.payload.userName, msg.payload.accessLevel, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIUser',
@@ -1376,14 +1373,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIUser',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getAllUsers':
-                    iotIUser.getAllUsers(function (error, body, response) {
+                    iotIUser.getAllUsers(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIUser',
@@ -1394,14 +1391,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIUser',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getUserPerUserName':
-                    iotIUser.getUserPerUserName(msg.payload.userName, function (error, body, response) {
+                    iotIUser.getUserPerUserName(msg.payload.userName, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIUser',
@@ -1412,14 +1409,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIUser',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'getUserSensors':
-                    iotIUser.getUserSensors(function (error, body, response) {
+                    iotIUser.getUserSensors(function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIUser',
@@ -1430,14 +1427,14 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIUser',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
                     break;
                 case 'updateUserDevice':
-                    iotIUser.updateUserDevice(msg.payload.userName, msg.payload.deviceId, function (error, body, response) {
+                    iotIUser.updateUserDevice(msg.payload.userName, msg.payload.deviceId, function(error, body, response) {
                         if (error) {
                             node.send({
                                 apiGroup: 'IotIUser',
@@ -1448,8 +1445,8 @@ module.exports = function (RED) {
                             node.send({
                                 apiGroup: 'IotIUser',
                                 api: switchValue,
-                                body: body,
-                                response: response
+                                body: body
+
                             });
                         }
                     });
@@ -1499,7 +1496,7 @@ module.exports = function (RED) {
         }
 
         function start() {
-            node.on('input', function (msg) {
+            node.on('input', function(msg) {
                 if (config.client === "IotIDevice") {
                     handleDeviceApis(msg);
                 } else if (config.client === "IotIGlobal") {
@@ -1524,7 +1521,7 @@ module.exports = function (RED) {
             });
         }
 
-        node.on('close', function () {
+        node.on('close', function() {
         });
     }
 
