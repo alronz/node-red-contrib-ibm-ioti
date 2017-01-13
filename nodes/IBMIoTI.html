@@ -323,6 +323,18 @@
 
 <h3>Overview</h3>
 <p>This goal of this node is to invoke all APIs provided by IBM service <a href="https://console.ng.bluemix.net/docs/services/IotInsurance/index.htm"> IoT for insurance </a>.</p>
+
+<h3>Configuring Node</h3>
+
+<p>The node requires three values to connect with IBM IoT for insurance service. The values are (uri,userid, and password) which can be found in the service dashboard.
+The node can be configured in three different ways:</p>
+
+<ul>
+<li>The node can take the service configuration from Bluemix if the app is deployed in Bluemix and connected with IoT4I service.</li>
+<li>They can be provided in the node itself.</li>
+<li>They can be sent as input inside <b>msg.payload.configs</b></li>
+</ul>
+
 <h3>Supported APIs</h3>
 <p>The APIs are divided to the below groups:</p>
 <ul>
@@ -337,7 +349,7 @@
 <li>User Apis</li>
 </ul>
 <p>Each API call needs some parameters and they should be provided inside the <strong>msg.payload</strong> object. For example, for calling createUser(user) API, you need to provide the user as <strong>msg.payload.user</strong>.</p>
-<p>Below are the list of all the supported APIs with their required paramters:</p>
+<p>Below are the list of all the supported APIs with their required parameters:</p>
 <h3>All (based on input)</h3>
 
 You can call any Api by providing the <b>msg.payload.apiGroup</b> and <b>msg.payload.api</b> values as input to the node.

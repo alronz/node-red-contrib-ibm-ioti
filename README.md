@@ -7,6 +7,15 @@ This goal of this node is to invoke all APIs provided by IBM service [IoT for in
 
 ```npm i node-red-contrib-ibm-ioti```
 
+### Configuring Node
+
+The node requires three values to connect with IBM IoT for insurance service. The values are (uri,userid, and password) which can be found in the service dashboard. The node can be configured in three different ways:
+
+- The node can take the service configuration from Bluemix if the app is deployed in Bluemix and connected with IoT4I service.
+- They can be provided in the node itself.
+- They can be sent as input inside <b>msg.payload.configs</b>
+
+
 ### Supported APIs
 
 The APIs are divided to the below groups:
