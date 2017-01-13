@@ -64,19 +64,19 @@ You can call any Api by providing the **msg.payload.apiGroup** and **msg.payload
 *   createHEvent(hazardEvent)
 *   getHEventPerHEventId(hazardEventId)
 *   getHEventPerId(id)
-*   getHEventsForAuthUser(callback)
+*   getHEventsForAuthUser()
 *   deleteHEventPerId(hazardEventId)
 *   deleteHEventsPerUser(username)
 *   deleteHEventAttribute(hazardEventId, attributeName)
 *   setHEventAttribute(hazardEventId, attributeName, attributeValue)
-*   getAllHEvents(callback)
+*   getAllHEvents()
 *   getHEventsAggregated(queryParams)
 *   updateHEventValidationType(hazardEventId, validationType)
 
 ### JSCode Apis
 
 *   createJSCode(jsCode)
-*   updateAll(callback)
+*   updateAll()
 *   getJSCodesPerShieldUUUID(shieldUUUID, queryParams)
 *   getCommonJSCodes(queryParams)
 *   getAllJSCodes(queryParams)
@@ -90,7 +90,7 @@ You can call any Api by providing the **msg.payload.apiGroup** and **msg.payload
 *   deletePromotionPerId(promotionId)
 *   deletePromotionAttribute(promotionId, attributeName)
 *   setPromotionAttribute(promotionId, attributeName, attributeValue)
-*   getAllPromotions(callback)
+*   getAllPromotions()
 
 ### Registration Apis
 
@@ -105,12 +105,12 @@ You can call any Api by providing the **msg.payload.apiGroup** and **msg.payload
 
 *   createShieldAssociation(shieldAssociation)
 *   getShieldAssociationsPerId(shieldAssociationId)
-*   getShieldAssociationsForAuthUser(callback)
+*   getShieldAssociationsForAuthUser()
 *   deleteShieldAssociationPerId(shieldAssociationId)
-*   deleteAllShieldAssociations(callback)
+*   deleteAllShieldAssociations()
 *   deleteShieldAssociationAttribute(shieldAssociationId, attributeName)
 *   setShieldAssociationAttribute(shieldAssociationId, attributeName, attributeValue)
-*   getAllShieldAssociations(callback)
+*   getAllShieldAssociations()
 *   getShieldAssociationsPerUser(username)
 *   setShieldAssociationOnCloud(shieldAssociation)
 
@@ -121,24 +121,24 @@ You can call any Api by providing the **msg.payload.apiGroup** and **msg.payload
 *   getShieldsPerUser(username)
 *   getShieldsPerUUID(uuid)
 *   deleteShieldPerId(shieldId)
-*   deleteAllShields(callback)
+*   deleteAllShields()
 *   deleteShieldAttribute(shieldId, attributeName)
 *   setShieldAttribute(shieldId, attributeName, attributeValue)
-*   getAllShields(callback)
+*   getAllShields()
 
 ### User Apis
 
 *   createUser(user)
-*   getAuthUser(callback)
-*   checkUserLogin(callback)
-*   checkUserLogout(callback)
+*   getAuthUser()
+*   checkUserLogin()
+*   checkUserLogout()
 *   deleteUserPerUserName(username)
 *   deleteUserAttribute(userName, attributeName)
 *   setUserAttribute(userName, attributeName, attributeValue)
 *   setUserAccessLevel(userName, accessLevel)
-*   getAllUsers(callback)
+*   getAllUsers()
 *   getUserPerUserName(userName)
-*   getUserSensors(callback)
+*   getUserSensors()
 *   updateUserDevice(userName, deviceId)
 
 

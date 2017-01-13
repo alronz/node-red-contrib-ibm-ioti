@@ -380,19 +380,19 @@ You can call any Api by providing the <b>msg.payload.apiGroup</b> and <b>msg.pay
 <li>createHEvent(hazardEvent)</li>
 <li>getHEventPerHEventId(hazardEventId)</li>
 <li>getHEventPerId(id)</li>
-<li>getHEventsForAuthUser(callback)</li>
+<li>getHEventsForAuthUser()</li>
 <li>deleteHEventPerId(hazardEventId)</li>
 <li>deleteHEventsPerUser(username)</li>
 <li>deleteHEventAttribute(hazardEventId, attributeName)</li>
 <li>setHEventAttribute(hazardEventId, attributeName, attributeValue)</li>
-<li>getAllHEvents(callback)</li>
+<li>getAllHEvents()</li>
 <li>getHEventsAggregated(queryParams)</li>
 <li>updateHEventValidationType(hazardEventId, validationType)</li>
 </ul>
 <h3>JSCode Apis</h3>
 <ul>
 <li>createJSCode(jsCode)</li>
-<li>updateAll(callback)</li>
+<li>updateAll()</li>
 <li>getJSCodesPerShieldUUUID(shieldUUUID, queryParams)</li>
 <li>getCommonJSCodes(queryParams)</li>
 <li>getAllJSCodes(queryParams)</li>
@@ -406,7 +406,7 @@ You can call any Api by providing the <b>msg.payload.apiGroup</b> and <b>msg.pay
 <li>deletePromotionPerId(promotionId)</li>
 <li>deletePromotionAttribute(promotionId, attributeName)</li>
 <li>setPromotionAttribute(promotionId, attributeName, attributeValue)</li>
-<li>getAllPromotions(callback)</li>
+<li>getAllPromotions()</li>
 </ul>
 <h3>Registration Apis</h3>
 <ul>
@@ -421,12 +421,12 @@ You can call any Api by providing the <b>msg.payload.apiGroup</b> and <b>msg.pay
 <ul>
 <li>createShieldAssociation(shieldAssociation)</li>
 <li>getShieldAssociationsPerId(shieldAssociationId)</li>
-<li>getShieldAssociationsForAuthUser(callback)</li>
+<li>getShieldAssociationsForAuthUser()</li>
 <li>deleteShieldAssociationPerId(shieldAssociationId)</li>
-<li>deleteAllShieldAssociations(callback)</li>
+<li>deleteAllShieldAssociations()</li>
 <li>deleteShieldAssociationAttribute(shieldAssociationId, attributeName)</li>
 <li>setShieldAssociationAttribute(shieldAssociationId, attributeName, attributeValue)</li>
-<li>getAllShieldAssociations(callback)</li>
+<li>getAllShieldAssociations()</li>
 <li>getShieldAssociationsPerUser(username)</li>
 <li>setShieldAssociationOnCloud(shieldAssociation)</li>
 </ul>
@@ -437,24 +437,24 @@ You can call any Api by providing the <b>msg.payload.apiGroup</b> and <b>msg.pay
 <li>getShieldsPerUser(username)</li>
 <li>getShieldsPerUUID(uuid)</li>
 <li>deleteShieldPerId(shieldId)</li>
-<li>deleteAllShields(callback)</li>
+<li>deleteAllShields()</li>
 <li>deleteShieldAttribute(shieldId, attributeName)</li>
 <li>setShieldAttribute(shieldId, attributeName, attributeValue)</li>
-<li>getAllShields(callback)</li>
+<li>getAllShields()</li>
 </ul>
 <h3>User Apis</h3>
 <ul>
 <li>createUser(user)</li>
-<li>getAuthUser(callback)</li>
-<li>checkUserLogin(callback)</li>
-<li>checkUserLogout(callback)</li>
+<li>getAuthUser()</li>
+<li>checkUserLogin()</li>
+<li>checkUserLogout()</li>
 <li>deleteUserPerUserName(username)</li>
 <li>deleteUserAttribute(userName, attributeName)</li>
 <li>setUserAttribute(userName, attributeName, attributeValue)</li>
 <li>setUserAccessLevel(userName, accessLevel)</li>
-<li>getAllUsers(callback)</li>
+<li>getAllUsers()</li>
 <li>getUserPerUserName(userName)</li>
-<li>getUserSensors(callback)</li>
+<li>getUserSensors()</li>
 <li>updateUserDevice(userName, deviceId)</li>
 </ul>
 
