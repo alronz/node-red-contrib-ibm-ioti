@@ -143,4 +143,6 @@ You can call any Api by providing the **msg.payload.apiGroup** and **msg.payload
 
 ### Example Flows
 
-<link to the other projects>
+Some example projects built with this node are below:
+
+[iot4i-example-node-red](https://github.com/alronz/iot4i-example-node-red)
