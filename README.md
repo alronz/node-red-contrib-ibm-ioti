@@ -1,7 +1,6 @@
 ### Overview
 
-This goal of this node is to invoke all APIs provided by IBM service [IoT for insurance](https://console.ng.bluemix.net/docs/services/IotInsurance/index.html).
-
+This goal of this node is to invoke all APIs provided by IBM service [IoT for insurance](https://console.ng.bluemix.net/docs/services/IotInsurance/index.html). This node is built using the [ioti-nodejs-sdk](https://github.com/alronz/ioti-nodejs-sdk).
 
 ### Install
 
