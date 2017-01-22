@@ -35,6 +35,11 @@ module.exports = function (RED) {
 
         if (vcapServices["iot-for-insurance"] && vcapServices["iot-for-insurance"][0]) {
             globalServiceConfig = vcapServices["iot-for-insurance"][0].credentials;
+        } else if (process.env.uri) {
+            globalServiceConfig =
+            {
+                uri: process.env.uri
+            };
         } else {
             globalServiceConfig =
             {
