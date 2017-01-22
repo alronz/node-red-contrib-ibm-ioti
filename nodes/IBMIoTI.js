@@ -71,7 +71,8 @@ module.exports = function (RED) {
             iotIUser.checkUserLogin(function (error, body, response) {
                 if (error) {
                     node.status({fill: "red", shape: "ring", text: "disconnected"});
-                    node.error("Credentials are not valid !")
+                    node.error("Credentials are not valid !");
+                    node.send({connect: false});
                     connected = false;
                 } else {
                     initializeClients(serviceConfig);
