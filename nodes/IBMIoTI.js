@@ -123,7 +123,7 @@ module.exports = function (RED) {
                             userApiHandler.handleMessage(msg, node, iotIUser);
                             break;
                         case 'IotIDevice':
-                            deviceApiHandler.handleMessage(msg, node, iotIUser);
+                            deviceApiHandler.handleMessage(msg, node, iotIDevice);
                             break;
                         case 'IotIGlobal':
                             globalApiHandler.handleMessage(msg, node, iotIGlobal);
