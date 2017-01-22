@@ -19,7 +19,7 @@ var registrationApiHandler = new RegistrationApiHandler();
 var shieldApiHandler = new ShieldApiHandler();
 var userApiHandler = new UserApiHandler();
 
-module.exports = function(RED) {
+module.exports = function (RED) {
 
     function IBMIoTI(config) {
         RED.nodes.createNode(this, config);
@@ -31,12 +31,12 @@ module.exports = function(RED) {
         if (process.env.VCAP_SERVICES) {
             vcapServices = JSON.parse(process.env.VCAP_SERVICES);
         }
-        var serviceConfig;
+        var globalServiceConfig;
 
         if (vcapServices["iot-for-insurance"] && vcapServices["iot-for-insurance"][0]) {
-            serviceConfig = vcapServices["iot-for-insurance"][0].credentials;
+            globalServiceConfig = vcapServices["iot-for-insurance"][0].credentials;
         } else {
-            serviceConfig =
+            globalServiceConfig =
             {
                 uri: config.uri,
                 userid: config.userid,
@@ -46,18 +46,21 @@ module.exports = function(RED) {
 
         node.status({fill: "red", shape: "ring", text: "disconnected"});
 
-        verifyCredentials(serviceConfig);
+        verifyCredentials(globalServiceConfig);
 
         var iotIUser, iotIDevice, iotIGlobal, iotIHazardEvent, iotIJSCode, iotIPromotion, iotIRegistration, iotIShieldAssociation, iotIShield;
 
-        function verifyCredentials(serviceConfig) {
+        function verifyCredentials(serviceConfig, type) {
+            if (basedOnInput && typeof serviceConfig.uri === 'undefined') {
+                serviceConfig.uri = globalServiceConfig.uri;
+            }
             if (serviceConfig.uri && serviceConfig.userid && serviceConfig.password) {
                 testCredentials(serviceConfig)
             } else {
                 node.status({fill: "red", shape: "ring", text: "disconnected"});
                 node.error("Credentials are not provided !");
                 connected = false;
-                node.on('input', function(msg) {
+                node.on('input', function (msg) {
                     handleAll(msg);
                 });
             }
@@ -65,7 +68,7 @@ module.exports = function(RED) {
 
         function testCredentials(serviceConfig) {
             var iotIUser = new IotIClient.IotIUser(serviceConfig);
-            iotIUser.checkUserLogin(function(error, body, response) {
+            iotIUser.checkUserLogin(function (error, body, response) {
                 if (error) {
                     node.status({fill: "red", shape: "ring", text: "disconnected"});
                     node.error("Credentials are not valid !")
@@ -158,7 +161,7 @@ module.exports = function(RED) {
         }
 
         function start() {
-            node.on('input', function(msg) {
+            node.on('input', function (msg) {
                 if (msg.payload.configs) {
                     basedOnInput = true;
                     verifyCredentials(msg.payload.configs);
@@ -188,7 +191,7 @@ module.exports = function(RED) {
             });
         }
 
-        node.on('close', function() {
+        node.on('close', function () {
             connected = false;
             basedOnInput = false;
         });
